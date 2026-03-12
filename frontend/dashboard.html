@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dashboard</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Dashboard</h2>
+
+<p id="msg"></p>
+
+<button onclick="logout()">Logout</button>
+
+</div>
+
+<script>
+
+const token = localStorage.getItem("token");
+
+if(!token){
+    window.location.href="index.html";
+}
+
+document.getElementById("msg").innerText = "Login Successful";
+
+function logout(){
+    localStorage.removeItem("token");
+    window.location.href="index.html";
+}
+
+</script>
+
+</body>
+</html>
